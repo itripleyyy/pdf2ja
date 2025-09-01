@@ -71,7 +71,7 @@ class MarkdownFixer:
     def __init__(
         self,
         api_key: str = None,
-        model: str = "gpt-4o-mini",
+        model: str = "gpt-4.1-mini",
         max_chunk_size: int = 5000,
         min_chunk_size: int = 500,
         verbose: bool = False,
@@ -150,12 +150,14 @@ def parse_args():
         "--api-key", help="OpenAI APIキー（未指定時は環境変数 OPENAI_API_KEY を使用）"
     )
     p.add_argument(
-        "--model", default="gpt-5-mini", help="使用モデル（既定: gpt-5-mini）"
+        "--model", default="gpt-4.1-mini", help="使用モデル（既定: gpt-4.1-mini）"
     )
     p.add_argument(
         "--max-chunk-size", type=int, default=5000, help="チャンク最大文字数"
     )
-    p.add_argument("--min-chunk-size", type=int, default=500, help="チャンク最小文字数")
+    p.add_argument(
+        "--min-chunk-size", type=int, default=1000, help="チャンク最小文字数"
+    )
     p.add_argument(
         "--delay",
         type=float,

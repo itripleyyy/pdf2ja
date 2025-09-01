@@ -136,13 +136,13 @@ def parse_args():
         "--api-key", help="OpenAI APIキー（未指定時は環境変数 OPENAI_API_KEY ）"
     )
     ap.add_argument(
-        "--model", default="gpt-5-mini", help="使用モデル（既定: gpt-5-mini）"
+        "--model", default="gpt-4.1-mini", help="使用モデル（既定: gpt-4.1-mini）"
     )
     ap.add_argument(
         "--max-chunk-size", type=int, default=5000, help="チャンク最大文字数"
     )
     ap.add_argument(
-        "--min-chunk-size", type=int, default=500, help="チャンク最小文字数"
+        "--min-chunk-size", type=int, default=1000, help="チャンク最小文字数"
     )
     ap.add_argument(
         "--delay",
